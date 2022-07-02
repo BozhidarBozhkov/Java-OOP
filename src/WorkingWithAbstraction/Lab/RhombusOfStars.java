@@ -1,3 +1,5 @@
+package WorkingWithAbstraction.Lab;
+
 import java.util.Scanner;
 
 public class RhombusOfStars {
