@@ -11,6 +11,7 @@ public class Person {
         this.setLastName(lastName);
         this.setAge(age);
     }
+
     public Person(String firstName, String lastName, int age, double salary) {
         this(firstName, lastName, age);
         this.setSalary(salary);
@@ -21,7 +22,7 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
-        if (firstName.length() < 3) {
+        if(firstName.length() < 3){
             throw new IllegalArgumentException("First name cannot be less than 3 symbols");
         }
         this.firstName = firstName;
@@ -32,7 +33,7 @@ public class Person {
     }
 
     public void setLastName(String lastName) {
-        if (lastName.length() < 3) {
+        if(lastName.length() < 3){
             throw new IllegalArgumentException("Last name cannot be less than 3 symbols");
         }
         this.lastName = lastName;
@@ -43,8 +44,8 @@ public class Person {
     }
 
     public void setAge(int age) {
-        if (age < 1) {
-            throw new IllegalArgumentException("Age cannot be zero or negative number");
+        if(age < 1){
+            throw new IllegalArgumentException("Age cannot be zero or negative integer");
         }
         this.age = age;
     }
@@ -62,14 +63,14 @@ public class Person {
 
     @Override
     public String toString() {
-        //  return String.format("%s %s gets %.1f leva", this.getFirstName(), this.getLastName(), this.getSalary());
-        return getFirstName() + " " + getLastName() + " gets " + salary + " leva";
+        return String.format("%s %s gets %.1f leva", firstName, lastName, salary);
     }
+
     public void increaseSalary(double bonus) {
-        if (this.getAge() < 30) {
-            this.setSalary(this.getSalary() + (this.getSalary() * bonus / 200));
+        if (age > 30) {
+            salary = salary + salary * bonus / 100;
         } else {
-            this.setSalary(this.getSalary() + (this.getSalary() * bonus / 100));
+            salary = salary + salary * bonus / 200;
         }
     }
 

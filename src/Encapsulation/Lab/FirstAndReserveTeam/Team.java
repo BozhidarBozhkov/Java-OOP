@@ -6,35 +6,36 @@ import java.util.List;
 
 public class Team {
     private String name;
-    List<Person> firstTeam;
-    List<Person> reverseTeam;
+    private List<Person> firstTeam;
+    private List<Person> reserveTeam;
 
     public Team(String name) {
-        this.name = name;
+        setName(name);
         firstTeam = new ArrayList<>();
-        reverseTeam = new ArrayList<>();
-    }
-
-    public String getName() {
-        return name;
+        reserveTeam = new ArrayList<>();
     }
 
     private void setName(String name) {
         this.name = name;
     }
 
-    public void addPlayer(Person person) {
-        if (person.getAge() < 40) {
-            firstTeam.add(person);
-        } else {
-            reverseTeam.add(person);
+    public String getName() {
+        return name;
+    }
+
+    public void addPlayer(Person player){
+        if(player.getAge() < 40){
+            firstTeam.add(player);
+        } else{
+            reserveTeam.add(player);
         }
     }
+
     public List<Person> getFirstTeam() {
         return Collections.unmodifiableList(this.firstTeam);
     }
 
     public List<Person> getReserveTeam() {
-        return Collections.unmodifiableList(this.reverseTeam);
+        return Collections.unmodifiableList(this.reserveTeam);
     }
 }

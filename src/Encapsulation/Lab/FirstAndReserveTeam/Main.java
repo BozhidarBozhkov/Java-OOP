@@ -16,14 +16,14 @@ public class Main {
             try {
                 Person person = new Person(input[0], input[1], Integer.parseInt(input[2]), Double.parseDouble(input[3]));
                 people.add(person);
-            } catch (IllegalArgumentException e) {
+            } catch (IllegalArgumentException e){
                 System.out.println(e.getMessage());
             }
         }
 
         Team team = new Team("Black Eagles");
-        for (Person player : people) {
-            team.addPlayer(player);
+        for (Person person : people) {
+            team.addPlayer(person);
         }
 
         System.out.printf("First team have %d players%n", team.getFirstTeam().size());
