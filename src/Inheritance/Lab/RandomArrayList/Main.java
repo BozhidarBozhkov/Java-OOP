@@ -9,6 +9,8 @@ public class Main {
         list.add(42);
         list.add(63);
         list.add(51);
+
+        System.out.println(list.getRandomElement());
     }
 
 }
