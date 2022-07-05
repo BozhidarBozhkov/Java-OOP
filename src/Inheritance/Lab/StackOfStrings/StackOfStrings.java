@@ -3,10 +3,10 @@ package Inheritance.Lab.StackOfStrings;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 
-public class Stack {
+public class StackOfStrings {
     private ArrayList<String> data;
 
-    public Stack() {
+    public StackOfStrings() {
         this.data = new ArrayList<>();
     }
 

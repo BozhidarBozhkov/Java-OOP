@@ -3,10 +3,10 @@ package Inheritance.Lab.StackOfStrings;
 public class Main {
     public static void main(String[] args) {
 
-        Stack stack = new Stack();
+        StackOfStrings stackOfStrings = new StackOfStrings();
 
-        stack.push("my solution");
-        System.out.println(stack.pop());
+        stackOfStrings.push("my solution");
+        System.out.println(stackOfStrings.pop());
     }
 
 }
