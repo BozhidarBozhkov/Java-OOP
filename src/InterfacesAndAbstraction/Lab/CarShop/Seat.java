@@ -24,7 +24,7 @@ public class Seat implements Car{
     }
 
     @Override
-    public int getHorsePower() {
+    public Integer getHorsePower() {
         return horsePower;
     }
 
