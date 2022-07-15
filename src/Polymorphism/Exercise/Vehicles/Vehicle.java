@@ -43,7 +43,11 @@ public class Vehicle {
     }
 
     public void refuel(double liters) {
-
         this.fuelQuantity += liters;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s: %.2f", this.getClass().getSimpleName(), this.fuelQuantity);
     }
 }

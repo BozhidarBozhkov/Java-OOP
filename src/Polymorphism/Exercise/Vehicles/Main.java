@@ -1,6 +1,7 @@
 package Polymorphism.Exercise.Vehicles;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class Main {
         tokens = scanner.nextLine().split("\\s+");
         Vehicle truck = createVehicle(tokens);
 
-        Map<String, Vehicle> vehicles = new HashMap<>();
+        Map<String, Vehicle> vehicles = new LinkedHashMap<>();
         vehicles.put("Car", car);
         vehicles.put("Truck", truck);
 
@@ -38,6 +39,8 @@ public class Main {
                     break;
             }
         }
+
+        vehicles.values().forEach(System.out::println);
 
     }
 
