@@ -1,16 +1,9 @@
 package Polymorphism.Exercise.Vehicles;
 
-public class Car extends AbstractVehicle{
-    private static final double FUEL_CONSUMPTION_INCREASE = 0.9;
+public class Car extends Vehicle {
+    private final static double ADDITIONAL_AC_CONSUMPTION = 0.9;
 
     public Car(double fuelQuantity, double fuelConsumption) {
-        super(fuelQuantity, fuelConsumption + FUEL_CONSUMPTION_INCREASE);
+        super(fuelQuantity, fuelConsumption + ADDITIONAL_AC_CONSUMPTION);
     }
-
-    @Override
-    public String drive(double kilometers) {
-
-        return "Car" + super.drive(kilometers);
-     }
-
 }
