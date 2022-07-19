@@ -1,4 +1,4 @@
-package ReflectionAndAnnotations.Lab;
+package ReflectionAndAnnotations.Lab.Reflection;
 
 import java.io.Serializable;
 
