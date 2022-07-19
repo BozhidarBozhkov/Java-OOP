@@ -1,31 +1,36 @@
 package ReflectionAndAnnotations.Lab.HighQualityMistakes;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Member;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.TreeSet;
-import java.util.stream.Collectors;
+
+import static ReflectionAndAnnotations.Lab.HighQualityMistakes.ReflectionUtils.*;
 
 public class Main {
     public static void main(String[] args) {
 
         Class<Reflection> clazz = Reflection.class;
 
-        Field[] fields = clazz.getDeclaredFields();
+        Method[] methods = clazz.getDeclaredMethods();
 
-        
+        Field[] declaredFields = clazz.getDeclaredFields();
 
+        TreeSet<Field> fields = collectByName(Arrays.stream(declaredFields));
 
-    }
+        filterMembers(fields.stream(), f -> !Modifier.isPrivate(f.getModifiers()))
+                .forEach(f -> System.out.println(f.getName() + " must be private!"));
 
-    public static <T extends Member> TreeSet<T> filterMembersBy (T[] members, String filter) {
+        TreeSet<Method> getters = collectByName(filterMembersByName(methods, "get"));
 
-        return Arrays.stream(members)
-                .filter(m -> m.getName().contains(filter))
-                .collect(Collectors.toCollection(
-                        () -> new TreeSet<>(Comparator.comparing(Member::getName))));
+        filterMembers(getters.stream(), g -> !Modifier.isPublic(g.getModifiers()))
+                .forEach(g -> System.out.println(g.getName() + " have to be public!"));
+
+        TreeSet<Method> setters = collectByName(filterMembersByName(methods, "set"));
+
+        filterMembers(setters.stream(), s -> !Modifier.isPrivate(s.getModifiers()))
+                .forEach(s -> System.out.println(s.getName() + " have to be private!"));
     }
 
 }
