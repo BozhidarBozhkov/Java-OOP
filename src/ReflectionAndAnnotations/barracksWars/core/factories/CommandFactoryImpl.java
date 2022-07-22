@@ -1,7 +1,10 @@
 package ReflectionAndAnnotations.barracksWars.core.factories;
 
-import barracksWars.core.commands.Command;
-import barracksWars.interfaces.CommandFactory;
+//import barracksWars.core.commands.Command;
+//import barracksWars.interfaces.CommandFactory;
+
+import ReflectionAndAnnotations.barracksWars.core.commands.Command;
+import ReflectionAndAnnotations.barracksWars.interfaces.CommandFactory;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

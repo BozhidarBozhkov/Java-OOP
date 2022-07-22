@@ -1,7 +1,8 @@
 package ReflectionAndAnnotations.barracksWars.core.commands;
 
-import barracksWars.annotations.Inject;
-import barracksWars.core.commands.Command;
+import ReflectionAndAnnotations.barracksWars.annotations.Inject;
+//import barracksWars.annotations.Inject;
+//import barracksWars.core.commands.Command;
 import barracksWars.interfaces.Repository;
 
 public class Retire extends Command {

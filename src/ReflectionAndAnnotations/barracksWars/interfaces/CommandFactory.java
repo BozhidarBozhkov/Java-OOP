@@ -1,6 +1,8 @@
 package ReflectionAndAnnotations.barracksWars.interfaces;
 
-import barracksWars.core.commands.Command;
+//import barracksWars.core.commands.Command;
+
+import ReflectionAndAnnotations.barracksWars.core.commands.Command;
 
 import java.lang.reflect.InvocationTargetException;
 
