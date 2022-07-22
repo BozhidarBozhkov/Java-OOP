@@ -1,4 +1,4 @@
-package barracksWars.models.units;
+package ReflectionAndAnnotations.BarracksWarsANewFactory.models.units;
 
 import barracksWars.interfaces.Unit;
 

@@ -1,4 +1,6 @@
-package barracksWars.models.units;
+package ReflectionAndAnnotations.BarracksWarsANewFactory.models.units;
+
+import barracksWars.models.units.AbstractUnit;
 
 public class Archer extends AbstractUnit {
     private static final int ARCHER_HEALTH = 25;

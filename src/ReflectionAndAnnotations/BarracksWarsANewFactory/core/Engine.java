@@ -1,4 +1,4 @@
-package barracksWars.core;
+package ReflectionAndAnnotations.BarracksWarsANewFactory.core;
 
 import barracksWars.interfaces.Repository;
 import barracksWars.interfaces.Runnable;
