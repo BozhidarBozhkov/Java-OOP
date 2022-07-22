@@ -22,7 +22,7 @@ public class LieutenantGeneralImpl extends PrivateImpl implements LieutenantGene
     public String toString() {
         //Name: {firstName} {lastName} Id: {id} Salary: {salary}
 
-        return
+        return null;
 
 
     }
