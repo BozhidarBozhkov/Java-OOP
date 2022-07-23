@@ -1,6 +1,6 @@
 package ReflectionAndAnnotations.BarracksWarsANewFactory.interfaces;
 
-import barracksWars.interfaces.Executable;
+import ReflectionAndAnnotations.P05barrackWars.barracksWars.interfaces.Executable;
 
 public interface CommandInterpreter {
 

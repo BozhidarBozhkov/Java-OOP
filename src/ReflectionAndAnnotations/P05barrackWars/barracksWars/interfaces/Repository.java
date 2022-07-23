@@ -1,6 +1,5 @@
-package ReflectionAndAnnotations.BarracksWarsANewFactory.interfaces;
+package ReflectionAndAnnotations.P05barrackWars.barracksWars.interfaces;
 
-import ReflectionAndAnnotations.P05barrackWars.barracksWars.interfaces.Unit;
 import jdk.jshell.spi.ExecutionControl;
 
 public interface Repository {

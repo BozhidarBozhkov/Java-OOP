@@ -1,6 +1,4 @@
-package ReflectionAndAnnotations.BarracksWarsANewFactory.models.units;
-
-import ReflectionAndAnnotations.P05barrackWars.barracksWars.models.units.AbstractUnit;
+package ReflectionAndAnnotations.P05barrackWars.barracksWars.models.units;
 
 public class Swordsman extends AbstractUnit {
     private static final int SWORDSMAN_HEALTH = 40;

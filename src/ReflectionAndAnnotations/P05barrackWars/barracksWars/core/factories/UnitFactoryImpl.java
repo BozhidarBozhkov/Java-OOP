@@ -1,4 +1,4 @@
-package ReflectionAndAnnotations.BarracksWarsANewFactory.core.factories;
+package ReflectionAndAnnotations.P05barrackWars.barracksWars.core.factories;
 
 import ReflectionAndAnnotations.P05barrackWars.barracksWars.interfaces.Unit;
 import ReflectionAndAnnotations.P05barrackWars.barracksWars.interfaces.UnitFactory;
@@ -21,7 +21,7 @@ public class UnitFactoryImpl implements UnitFactory {
 			InstantiationException,
 			IllegalAccessException {
 
-		final Class<Unit> unitClass = (Class<Unit>) Class.forName(UNITS_PACKAGE_NAME + unitType);
+		Class<Unit> unitClass = (Class<Unit>) Class.forName(UNITS_PACKAGE_NAME + unitType);
 
 		return createUnit(unitClass);
 
@@ -29,9 +29,9 @@ public class UnitFactoryImpl implements UnitFactory {
 	}
 
 	private Unit createUnit(Class<Unit> unitClass) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-		final Constructor<Unit> constructorOfUnit = unitClass.getDeclaredConstructor();
-		constructorOfUnit.setAccessible(true);
+		Constructor<Unit> constructor = unitClass.getDeclaredConstructor();
+		constructor.setAccessible(true);
 
-		return constructorOfUnit.newInstance();
+		return constructor.newInstance();
 	}
 }

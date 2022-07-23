@@ -1,4 +1,4 @@
-package ReflectionAndAnnotations.BarracksWarsANewFactory.data;
+package ReflectionAndAnnotations.P05barrackWars.barracksWars.data;
 
 import ReflectionAndAnnotations.P05barrackWars.barracksWars.interfaces.Repository;
 import ReflectionAndAnnotations.P05barrackWars.barracksWars.interfaces.Unit;
@@ -16,17 +16,17 @@ public class UnitRepository implements Repository {
 	}
 
 	public void addUnit(Unit unit) {
-		String unitType = unit.getClass().getSimpleName();
+		final String unitType = unit.getClass().getSimpleName();
 		if (!this.amountOfUnits.containsKey(unitType)) {
 			this.amountOfUnits.put(unitType, 0);
 		}
 
-		int newAmount = this.amountOfUnits.get(unitType) + 1;
+		final int newAmount = this.amountOfUnits.get(unitType) + 1;
 		this.amountOfUnits.put(unitType, newAmount);
 	}
 
 	public String getStatistics() {
-		StringBuilder statBuilder = new StringBuilder();
+		final StringBuilder statBuilder = new StringBuilder();
 		for (Map.Entry<String, Integer> entry : amountOfUnits.entrySet()) {
 			String formattedUnits =
 					String.format("%s -> %d%n", entry.getKey(), entry.getValue());
@@ -39,7 +39,11 @@ public class UnitRepository implements Repository {
 	}
 
 	public void removeUnit(String unitType) throws ExecutionControl.NotImplementedException {
-		// TODO: implement for problem 4
-		throw new ExecutionControl.NotImplementedException("message");
+		if ((this.amountOfUnits.containsKey(unitType) && this.amountOfUnits.get(unitType) != 0)) {
+			final Integer newAmountOfUnits = this.amountOfUnits.get(unitType) - 1;
+
+			this.amountOfUnits.put(unitType, newAmountOfUnits);
+		} else throw new ExecutionControl.NotImplementedException("No such units in repository.");
+
 	}
 }

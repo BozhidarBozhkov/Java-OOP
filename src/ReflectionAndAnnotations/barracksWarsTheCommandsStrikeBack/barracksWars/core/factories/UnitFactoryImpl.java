@@ -10,7 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 public class UnitFactoryImpl implements UnitFactory {
 
 	private static final String UNITS_PACKAGE_NAME =
-			"barracksWars.models.units.";
+			"ReflectionAndAnnotations.P05barrackWars.barracksWars.models.units.";
 
 	@Override
 	@SuppressWarnings("all")
