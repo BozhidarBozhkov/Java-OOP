@@ -21,4 +21,19 @@ public class EngineerImpl extends SpecialisedSoldierImpl implements Engineer{
     public Collection<Repair> getRepairs() {
         return Collections.unmodifiableCollection(repairs);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(String.format("Name: %s %s Id: %d Salary: %.2f%n", getFirstName(), getLastName(), getId(), getSalary()))
+                .append(String.format("Corps: %s%n", getCorps()))
+                .append("Repairs:");
+        repairs.forEach(r -> {
+            sb.append(String.format("%n %s", r));
+        });
+
+        return sb.toString();
+
+    }
 }

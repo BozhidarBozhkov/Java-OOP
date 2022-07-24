@@ -29,4 +29,10 @@ public class Mission {
     public void completeMission() {
         setState(MissionState.finished);
     }
+
+    @Override
+    public String toString() {
+
+        return String.format("Code Name: %s State: %s", codeName, state);
+    }
 }

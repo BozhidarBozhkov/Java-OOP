@@ -25,4 +25,11 @@ public class Repair {
     public void setHoursWorked(int hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
+
+    @Override
+    public String toString() {
+    //"Part Name: {partName} Hours Worked: {hoursWorked}"
+        return String.format("Part Name: %s Hours Worked: %d", getPartName(), hoursWorked);
+
+    }
 }

@@ -3,6 +3,7 @@ package InterfacesAndAbstraction.Exercise.MilitaryElite;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LieutenantGeneralImpl extends PrivateImpl implements LieutenantGeneral{
 
@@ -13,6 +14,8 @@ public class LieutenantGeneralImpl extends PrivateImpl implements LieutenantGene
         privates = new ArrayList<>();
     }
 
+
+
     @Override
     public void addPrivate(Private priv) {
         privates.add(priv);
@@ -21,8 +24,15 @@ public class LieutenantGeneralImpl extends PrivateImpl implements LieutenantGene
     @Override
     public String toString() {
         //Name: {firstName} {lastName} Id: {id} Salary: {salary}
+        StringBuilder builder = new StringBuilder();
 
-        return null;
+        builder.append(String.format(
+                        "Name: %s %s Id: %d Salary: %.2f%n", getFirstName(), getLastName(), getId(), getSalary()))
+                .append("Privates:");
+        privates.stream().sorted((a, b) -> b.getId() - a.getId()).forEach(aPrivate -> {
+            builder.append(String.format("%n  %s", aPrivate));
+        });
+        return builder.toString();
 
 
     }
